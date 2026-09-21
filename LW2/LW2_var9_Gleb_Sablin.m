@@ -1,12 +1,12 @@
-%% Gleb Sablin EDIfu25/2 09-20
+%% VAR-9 Gleb Sablin EDIfu25/2 09-21
 clc; clear
 
 % Mandatory 
 
-V = -pi/2:0.5:3*pi;
-Vcube = V.^2;
-Vsin = sin(Vcube + V);
-disp(Vsin);
+V = (-pi/2:0.5:3*pi)';
+Vsq = V.^2;
+Vsin = sin(Vsq + V);
+disp(Vsin');
 
 M = rand(3,3);
 M(2,:) = [];
@@ -35,11 +35,8 @@ clear
 clc
 A = input("Vector A (12 elements) = ");
 disp("generated vector B:")
-B = [A(10:end), A(1:9)];
-B = [10 11 12 1 2 3 4 5 6 7 8 9];
-mask1 = [false(1,9), true(1, 3)];
-mask2 = [true(1,9), false(1, 3)];
-B = [A(mask1), A(mask2)];
+mask1 = (1:numel(A)) <=9;
+B = [A(10:end), A(mask1)];
 disp(B)
 
 
