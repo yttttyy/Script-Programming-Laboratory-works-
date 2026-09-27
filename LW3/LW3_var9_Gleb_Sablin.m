@@ -22,16 +22,14 @@ plot3(x_3d, y_3d, z_3d);
 xlabel('x');
 ylabel('y(x) = sin(x)cos(x)');
 zlabel('z(x) = cos(x)');
-title('3D plot of y(x) and z(x)');
 xlim([0 10*pi]);
 ylim([-1 1]);
 zlim([-1 1]);
-title("a)");
+title('a) 3D plot of y(x) and z(x)');
 subplot(1, 2, 2);
 polarplot(x_3d, y_3d);
 rlim([0 0.5]);
-title("b)");
-
+title('b) Polar plot of y(x) = sin(x)cos(x)');
 
 
 %% Complementary
